@@ -16,6 +16,6 @@
     "author": "LXK9301",
     "license": "ISC",
     "dependencies": {
-      "got": "^11.5.1",
+      "got": "^11.5.1"
     }
   }
