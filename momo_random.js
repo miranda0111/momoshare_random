@@ -30,7 +30,7 @@
              $.log('开始 【点击分享链接】')
              await addLike()
              await $.wait(2 * 1000);
-         await wyy();
+        // await wyy();
          await $.wait(2 * 1000); 
         // let hour = new Date().getHours();
         // if (hour%4 != 0){
