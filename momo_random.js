@@ -21,9 +21,9 @@
                  8 * 60 * 60 * 1000
              ).toLocaleString()} =========================================\n`);
          await getthisIP();
-         await $.wait(2 * 1000);
+         // await $.wait(2 * 1000);
              UA = require('./USER_AGENTS').USER_AGENT;
-             await $.wait(2 * 1000);
+             //await $.wait(2 * 1000);
              if (debug) {
                 console.log(`\n【debug】 这是你的UA数据:\n ${UA}\n`);
              }
@@ -31,7 +31,7 @@
              await addLike()
              await $.wait(2 * 1000);
         // await wyy();
-         await $.wait(2 * 1000); 
+        //  await $.wait(2 * 1000); 
         // let hour = new Date().getHours();
         // if (hour%4 != 0){
             await SendMsg(msg);
