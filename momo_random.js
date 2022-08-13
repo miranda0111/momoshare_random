@@ -135,7 +135,7 @@ async function MM() {
                  }
                 let sum = data.match(/(?<=增加了)(.+?)(?=个单词)/)[0];
                 let namedata = data.match(/(?<=alt=")\S*(?="\/)/)[0];
-                console.log(`用户${namedata}单词数增加到${sum}`);
+                console.log(`【 用  户 】：${namedata} 加了 ${sum} 个单词上限`);
                 msg += `\n 【 用  户 】：${namedata} 加了 ${sum} 个单词上限`
 			} catch (e) {
 				$.logErr(e, resp);
