@@ -96,10 +96,10 @@
  
  
         //  }
-        let hour = new Date().getHours();
-        if (hour%4 != 0){
+        // let hour = new Date().getHours();
+        // if (hour%4 != 0){
             await SendMsg(msg);
-         }
+        //  }
 
  
      }
