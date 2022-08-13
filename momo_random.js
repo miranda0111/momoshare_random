@@ -1,105 +1,47 @@
 /**
  * 墨墨背单词share_random
- * 
  */
  const $ = new Env("墨墨背单词share_random");
  const notify = $.isNode() ? require('./sendNotify') : '';
  const Notify = 1; //0为关闭通知，1为打开通知,默认为1
  const debug = 1; //0为关闭调试，1为打开调试,默认为0
- 
-//  let MMSL = ($.isNode() ? process.env.MMSL : $.getdata('MMSL')) || "";
-//  let MMSLArr = [];
+
  let msg = '';
  let UA = '';
 
- 
- 
  !(async () => {
  
      if (!(await MM()))  //多账号分割 判断变量是否为空  初步处理多账号
          return;
      else {
- 
          console.log(
              `\n\n=========================================    脚本执行 - 北京时间(UTC+8)：${new Date(
                  new Date().getTime() +
                  new Date().getTimezoneOffset() * 60 * 1000 +
                  8 * 60 * 60 * 1000
              ).toLocaleString()} =========================================\n`);
- 
- 
          await wyy();
          await $.wait(2 * 1000);
          await getthisIP();
          await $.wait(2 * 1000);
-
- 
-        //  $.log(`\n=================== 共找到 ${MMSLArr.length} 个账号 ===================`)
- 
-        //  if (debug) {
-        //      console.log(`【debug】 这是你的账号数组:\n ${MMSLArr}`);
-        //  }      
- 
-        //  for (let index = 0; index < MMSLArr.length; index++) {
- 
- 
-            //  let num = index + 1
-            //  $.log(`\n========= 开始【第 ${num} 个账号】=========\n`)
-            //  msg += `\n【第 ${num} 个账号】`
-            //  MMSL = MMSLArr[index];   
-            //  if (debug) {
-            //      console.log(`\n【debug】 这是你第 ${num}`);
-            //  }
              UA = require('./USER_AGENTS').USER_AGENT;
-            //  UA = USER_AGENTS[randomNumber(0, USER_AGENTS.length)];
-
              await $.wait(2 * 1000);
              if (debug) {
                 console.log(`\n【debug】 这是你的UA数据:\n ${UA}\n`);
              }
- 
- 
              $.log('开始 【点击分享链接】')
              await addLike()
              await $.wait(2 * 1000);
- 
- 
-        //  }
         // let hour = new Date().getHours();
         // if (hour%4 != 0){
             await SendMsg(msg);
         //  }
-
- 
      }
- 
  })()
      .catch((e) => $.logErr(e))
      .finally(() => $.done())
- 
  //#region 固定代码
  // ============================================变量检查============================================ \\
-//  async function Envs() {
-//      if (MMSL) {
-//          if (MMSL.indexOf("@") != -1) {
-//              MMSL.split("@").forEach((item) => {
-//                  MMSLArr.push(item);
-//              });
-//          } else if (MMSL.indexOf("\n") != -1) {
-//             MMSL.split("\n").forEach((item) => {
-//                  MMSLArr.push(item);
-//              });
-//          } else {
-//              MMSLArr.push(MMSL);
-//          }
-//      } else {
-//          $.log(`\n【${$.name}】：未填写变量 MMSL`)
-//          return;
-//      }
- 
-//      return true;
-//  }
- 
 async function MM() {
      let url = require('./MMSLS').MMSL_random;
      if (url) {
@@ -108,7 +50,6 @@ async function MM() {
         $.log(`\n【${$.name}】：未在MMSLS.js文件中填写分享链接`)
      }
  }
-
 
  // ============================================发送消息============================================ \\
  async function SendMsg(message) {
@@ -126,15 +67,6 @@ async function MM() {
          console.log(message);
      }
  }
-
-/**
- * 生成随机数字
- * @param {number} min 最小值（包含）
- * @param {number} max 最大值（不包含）
- */
-//  function randomNumber(min = 0, max = 100) {
-//   return Math.min(Math.floor(min + Math.random() * (max - min)), max);
-//  }
 
 /**
  * 请求接口
