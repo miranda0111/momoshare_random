@@ -151,8 +151,8 @@ async function MM() {
                  }
 				data = JSON.parse(data);
                 let _ip = data.ip;
-                console.log(`本次请求的ip为：${_ip}`);
-                msg += `\n 本次请求的ip为：${_ip}`
+                console.log(`【请求的 ip 】：${_ip}`);
+                msg += `\n 【请求的 ip 】：${_ip}`
 			} catch (e) {
 				$.logErr(e, resp);
 			} finally {
@@ -204,7 +204,7 @@ async function MM() {
                 let sum = data.match(/(?<=增加了)(.+?)(?=个单词)/)[0];
                 let namedata = data.match(/(?<=alt=")\S*(?="\/)/)[0];
                 console.log(`用户${namedata}单词数增加到${sum}`);
-                msg += `\n 用户${namedata}单词数增加到${sum}`
+                msg += `\n 【用户】：${namedata} 的单词数增加到 ${sum}`
 			} catch (e) {
 				$.logErr(e, resp);
 			} finally {
