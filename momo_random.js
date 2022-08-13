@@ -92,7 +92,7 @@
  
              $.log('开始 【点击分享链接】')
              await addLike()
-             await $.wait(60 * 1000);
+             await $.wait(2 * 1000);
  
  
         //  }
