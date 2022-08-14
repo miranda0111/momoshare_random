@@ -32,10 +32,10 @@
              await $.wait(2 * 1000);
         // await wyy();
         //  await $.wait(2 * 1000); 
-        // let hour = new Date().getHours();
-        // if (hour%4 != 0){
+        let hour = new Date().getHours();
+        if (hour%4 != 0){
             await SendMsg(msg);
-        //  }
+          }
      }
  })()
      .catch((e) => $.logErr(e))
